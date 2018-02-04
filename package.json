@@ -1,0 +1,46 @@
+{
+  "name": "try-lit-element",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Try lit-element",
+  "keywords": [
+    "try-lit-element",
+    "node",
+    "typescript"
+  ],
+  "homepage": "https://github.com/motss/try-lit-element",
+  "license": "MIT",
+  "author": {
+    "name": "Rong Sen Ng",
+    "email": "wes.ngrongsen@gmail.com",
+    "url": "https://github.com/motss"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:motss/try-lit-element.git"
+  },
+  "scripts": {
+    "check": "npm run nsp",
+    "nsp": "nsp check",
+    "prepublishOnly": "npm run check"
+  },
+  "dependencies": {
+    "@polymer/lit-element": "^0.1.0"
+  },
+  "devDependencies": {
+    "nsp": "^3.1.0"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.5.1"
+  },
+  "flat": true,
+  "resolutions": {
+    "lodash": "4.17.5",
+    "string-width": "2.1.1",
+    "is-fullwidth-code-point": "2.0.0",
+    "strip-ansi": "4.0.0",
+    "ansi-regex": "3.0.0"
+  }
+}
