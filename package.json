@@ -26,7 +26,8 @@
     "prepublishOnly": "npm run check"
   },
   "dependencies": {
-    "@polymer/lit-element": "^0.1.0"
+    "@polymer/lit-element": "^0.1.0",
+    "@polymer/paper-button": "^3.0.0-pre.7"
   },
   "devDependencies": {
     "nsp": "^3.1.0"

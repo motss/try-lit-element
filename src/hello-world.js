@@ -2,6 +2,7 @@ import {
   html,
   LitElement,
 } from '../node_modules/@polymer/lit-element/lit-element.js';
+import '../node_modules/@polymer/paper-button/paper-button.js';
 
 class HelloWorld extends LitElement {
   static get is() {
@@ -46,9 +47,21 @@ class HelloWorld extends LitElement {
         * {
           box-sizing: border-box;
         }
+
+        paper-button {
+          color: #0070fb;
+          font-size: 14px;
+
+          --paper-button-ink-color: #848484;
+        }
       </style>
 
       <h1>Hello, ${_fullName}</h1>
+
+      <div class="button-container">
+        <paper-button>cancel</paper-button>
+        <paper-button>ok</paper-button>
+      </div>
     `;
   }
 }
