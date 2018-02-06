@@ -1,19 +1,14 @@
-export function ledux(store) {
-  return baseElement => class extends baseElement {
-    constructor() {
-      super();
+export const ledux = (store) => baseElement => class extends baseElement {
+  constructor() {
+    super();
 
-      // this.update = this.update.bind(this, store);
-    }
-
-    update(fn) {
-      // throw new Error('update() not implemented!');
-      return fn(store)
-        .then(() => {
-          console.info('🚗 store', store);
-        });
-    }
+    store.subscribe(() => this.update(store.getAll()));
+    this.update(store.getAll());
   }
-}
+
+  update() {
+    throw new Error('update() not implemented!', this);
+  }
+};
 
 export default ledux;

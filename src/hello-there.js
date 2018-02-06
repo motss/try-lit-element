@@ -9,9 +9,9 @@ import '../node_modules/@polymer/paper-button/paper-button.js';
 import { ledux } from './ledux.js';
 import { store } from './store.js';
 
-class HelloWorld extends ledux(store)(LitElement) {
+class HelloThere extends ledux(store)(LitElement) {
   static get is() {
-    return 'hello-world';
+    return 'hello-there';
   }
 
   static get properties() {
@@ -41,10 +41,10 @@ class HelloWorld extends ledux(store)(LitElement) {
   render({
     _fullName,
   }) {
-    console.log('🚧 HelloWorld:render', store.getAll());
+    console.log('🚧 HelloThere:render', store.getAll());
 
     window.setTimeout(() => {
-      store.set('firstName', 'Mary');
+      store.set('firstName', 'Jane');
       store.set('lastName', 'Doe');
     }, 5e3);
 
@@ -77,7 +77,7 @@ class HelloWorld extends ledux(store)(LitElement) {
   }
 
   update({ firstName, lastName }) {
-    console.log('🚧 HelloWorld:update', { firstName, lastName });
+    console.log('🚧 HelloThere:update', { firstName, lastName });
 
     this.firstName = firstName;
     this.lastName = lastName;
@@ -92,4 +92,4 @@ class HelloWorld extends ledux(store)(LitElement) {
   }
 }
 
-window.customElements.define(HelloWorld.is, HelloWorld);
+window.customElements.define(HelloThere.is, HelloThere);
