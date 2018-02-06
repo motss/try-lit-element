@@ -1,10 +1,16 @@
+/** Import project dependencies */
 import {
   html,
   LitElement,
 } from '../node_modules/@polymer/lit-element/lit-element.js';
 import '../node_modules/@polymer/paper-button/paper-button.js';
 
-class HelloWorld extends LitElement {
+/** Import other modules */
+import {
+  ledux,
+} from './ledux.js';
+
+class HelloWorld extends ledux(new Map())(LitElement) {
   static get is() {
     return 'hello-world';
   }
@@ -37,6 +43,19 @@ class HelloWorld extends LitElement {
   render({
     _fullName,
   }) {
+    console.log('🚧 HelloWorld:render');
+
+    // this.update(async store => {
+    //   console.log('🚧 ::update', store);
+
+    //   store.set('firstName', 'Mary');
+    //   store.set('lastName', 'Doe');
+    // });
+    window.setTimeout(() => {
+      this.firstName = 'Mary';
+      this.lastName = 'Doe';
+    }, 5e3);
+
     return html`
       <style>
         :host {
@@ -59,10 +78,18 @@ class HelloWorld extends LitElement {
       <h1>Hello, ${_fullName}</h1>
 
       <div class="button-container">
-        <paper-button>cancel</paper-button>
-        <paper-button>ok</paper-button>
+        <paper-button on-tap="${ev => this.dismissAction(ev)}">cancel</paper-button>
+        <paper-button on-tap="${ev => this.confirmAction(ev)}">ok</paper-button>
       </div>
     `;
+  }
+
+  dismissAction(ev) {
+    console.info('🚧 dismissAction', ev.target);
+  }
+
+  confirmAction(ev) {
+    console.info('🚧 confirmAction', ev.target);
   }
 }
 
