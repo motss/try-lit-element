@@ -2,9 +2,9 @@ const map = new Map();
 let subscriber = null;
 
 export const store = {
-  subscribe(fn) {
-    subscriber = fn;
-  },
+  // subscribe(fn) {
+  //   subscriber = fn;
+  // },
 
   getAll() {
     return [...map.entries()].reduce((p, [key, val]) => {
@@ -18,8 +18,8 @@ export const store = {
   set(key, value) {
     map.set(key, value);
 
-    subscriber();
-  }
+    // subscriber();
+  },
 };
 
 export default store;

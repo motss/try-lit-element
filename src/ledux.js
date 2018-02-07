@@ -2,7 +2,7 @@ export const ledux = (store) => baseElement => class extends baseElement {
   constructor() {
     super();
 
-    store.subscribe(() => this.update(store.getAll()));
+    // store.subscribe(() => this.update(store.getAll()));
     this.update(store.getAll());
   }
 

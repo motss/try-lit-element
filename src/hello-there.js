@@ -5,11 +5,7 @@ import {
 } from '../node_modules/@polymer/lit-element/lit-element.js';
 import '../node_modules/@polymer/paper-button/paper-button.js';
 
-/** Import other modules */
-import { ledux } from './ledux.js';
-import { store } from './store.js';
-
-class HelloThere extends ledux(store)(LitElement) {
+class HelloThere extends LitElement {
   static get is() {
     return 'hello-there';
   }
@@ -25,9 +21,6 @@ class HelloThere extends ledux(store)(LitElement) {
 
   constructor() {
     super();
-
-    store.set('firstName', 'John');
-    store.set('lastName', 'Doe');
   }
 
   _propertiesChanged(props, changed, oldProps) {
@@ -41,12 +34,7 @@ class HelloThere extends ledux(store)(LitElement) {
   render({
     _fullName,
   }) {
-    console.log('🚧 HelloThere:render', store.getAll());
-
-    window.setTimeout(() => {
-      store.set('firstName', 'Jane');
-      store.set('lastName', 'Doe');
-    }, 5e3);
+    console.log('🚧 HelloThere:render');
 
     return html`
       <style>
@@ -74,13 +62,6 @@ class HelloThere extends ledux(store)(LitElement) {
         <paper-button on-tap="${ev => this.confirmAction(ev)}">ok</paper-button>
       </div>
     `;
-  }
-
-  update({ firstName, lastName }) {
-    console.log('🚧 HelloThere:update', { firstName, lastName });
-
-    this.firstName = firstName;
-    this.lastName = lastName;
   }
 
   dismissAction(ev) {
