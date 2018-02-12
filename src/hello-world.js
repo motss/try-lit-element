@@ -14,28 +14,32 @@ class HelloWorld extends LitElement {
     return {
       firstName: String,
       lastName: String,
-
-      _fullName: String,
     };
   }
 
   constructor() {
     super();
+
+    if (this.firstName == null && this.lastName == null) {
+      this.firstName = 'John';
+      this.lastName = 'Doe';
+    }
   }
 
   _propertiesChanged(props, changed, oldProps) {
     super._propertiesChanged(props, changed, oldProps);
 
-    this._fullName = `${props.firstName} ${props.lastName}`;
-
     // console.log('🚧 _propertiesChanged', props, changed, oldProps);
   }
 
-  render({
-    _fullName,
-  }) {
-    console.log('🚧 HelloWorld:render');
+  didRender() {
+    console.log('🚧 didRender', this);
+  }
 
+  render({
+    firstName,
+    lastName
+  }) {
     return html`
       <style>
         :host {
@@ -55,13 +59,17 @@ class HelloWorld extends LitElement {
         }
       </style>
 
-      <h1>Hello, ${_fullName}</h1>
+      <h1>Hello, ${this.computeFullName(firstName, lastName)}</h1>
 
       <div class="button-container">
         <paper-button on-tap="${ev => this.dismissAction(ev)}">cancel</paper-button>
         <paper-button on-tap="${ev => this.confirmAction(ev)}">ok</paper-button>
       </div>
     `;
+  }
+
+  computeFullName(firstName, lastName) {
+    return `${firstName} ${lastName}`;
   }
 
   dismissAction(ev) {
