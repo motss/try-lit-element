@@ -26,14 +26,26 @@ class HelloWorld extends LitElement {
     }
   }
 
-  _propertiesChanged(props, changed, oldProps) {
-    super._propertiesChanged(props, changed, oldProps);
+  // _propertiesChanged(props, changed, oldProps) {
+  //   super._propertiesChanged(props, changed, oldProps);
 
-    // console.log('🚧 _propertiesChanged', props, changed, oldProps);
-  }
+  //   // console.log('🚧 _propertiesChanged', props, changed, oldProps);
+  // }
 
-  didRender() {
-    console.log('🚧 didRender', this);
+  // didRender() {
+  //   console.log('🚧 didRender', this);
+  // }
+
+  _shouldPropertiesChange(props, changedProps) {
+    console.log('🚧 _shouldPropertiesChange', props, changedProps);
+
+    Object.keys(changedProps)
+      .filter(propKey => !/^_+/i.test(propKey))
+      .map((propKey) => {
+        // TODO: Do more stuffs here!!!
+      });
+
+    return true;
   }
 
   render({
