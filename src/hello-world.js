@@ -43,6 +43,12 @@ class HelloWorld extends LitElement {
       .filter(propKey => !/^_+/i.test(propKey))
       .map((propKey) => {
         // TODO: Do more stuffs here!!!
+        switch (propKey) {
+          /** NOTE: no op for other prop keys */
+          default: {
+            return;
+          }
+        }
       });
 
     return true;
