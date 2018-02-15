@@ -20,10 +20,12 @@ class HelloWorld extends LitElement {
   constructor() {
     super();
 
-    if (this.firstName == null && this.lastName == null) {
-      this.firstName = 'John';
-      this.lastName = 'Doe';
-    }
+    this.firstName = this.firstName == null
+      ? 'John'
+      : this.firstName;
+    this.lastName = this.lastName == null
+      ? 'Doe'
+      : this.lastName;
   }
 
   // _propertiesChanged(props, changed, oldProps) {
@@ -77,7 +79,7 @@ class HelloWorld extends LitElement {
         }
       </style>
 
-      <h1>Hello, ${this.computeFullName(firstName, lastName)}</h1>
+      <h1>Hello, ${this._computeFullName(firstName, lastName)}</h1>
 
       <div class="button-container">
         <paper-button on-tap="${ev => this.dismissAction(ev)}">cancel</paper-button>
@@ -86,7 +88,7 @@ class HelloWorld extends LitElement {
     `;
   }
 
-  computeFullName(firstName, lastName) {
+  _computeFullName(firstName, lastName) {
     return `${firstName} ${lastName}`;
   }
 
