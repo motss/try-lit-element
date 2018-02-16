@@ -14,6 +14,7 @@ class HelloWorld extends LitElement {
     return {
       firstName: String,
       lastName: String,
+      isAdmin: Boolean,
     };
   }
 
@@ -26,6 +27,9 @@ class HelloWorld extends LitElement {
     this.lastName = this.lastName == null
       ? 'Doe'
       : this.lastName;
+    this.isAdmin = this.isAdmin == null
+      ? false
+      : this.isAdmin;
   }
 
   // _propertiesChanged(props, changed, oldProps) {
@@ -58,8 +62,11 @@ class HelloWorld extends LitElement {
 
   render({
     firstName,
-    lastName
+    lastName,
+    isAdmin,
   }) {
+    const fullName = this._computeFullName(firstName, lastName);
+
     return html`
       <style>
         :host {
@@ -79,11 +86,15 @@ class HelloWorld extends LitElement {
         }
       </style>
 
-      <h1>Hello, ${this._computeFullName(firstName, lastName)}</h1>
+      <h1>${
+        isAdmin
+          ? html`Hi admin, ${fullName}`
+          : html`Welcome back, ${fullName}`
+      }</h1>
 
       <div class="button-container">
-        <paper-button on-tap="${ev => this.dismissAction(ev)}">cancel</paper-button>
-        <paper-button on-tap="${ev => this.confirmAction(ev)}">ok</paper-button>
+        <paper-button on-tap="${ev => this._dismissAction(ev)}">cancel</paper-button>
+        <paper-button on-tap="${ev => this._confirmAction(ev)}">ok</paper-button>
       </div>
     `;
   }
@@ -92,11 +103,11 @@ class HelloWorld extends LitElement {
     return `${firstName} ${lastName}`;
   }
 
-  dismissAction(ev) {
+  _dismissAction(ev) {
     console.info('🚧 dismissAction', ev.target);
   }
 
-  confirmAction(ev) {
+  _confirmAction(ev) {
     console.info('🚧 confirmAction', ev.target);
   }
 }
