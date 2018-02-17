@@ -45,19 +45,24 @@ class HelloWorld extends LitElement {
   _shouldPropertiesChange(props, changedProps) {
     console.log('🚧 _shouldPropertiesChange', props, changedProps);
 
-    Object.keys(changedProps)
-      .filter(propKey => !/^_+/i.test(propKey))
-      .map((propKey) => {
-        // TODO: Do more stuffs here!!!
-        switch (propKey) {
-          /** NOTE: no op for other prop keys */
-          default: {
-            return;
-          }
-        }
-      });
+    // Object.keys(changedProps)
+    //   .filter(propKey => !/^_+/i.test(propKey))
+    //   .map((propKey) => {
+    //     // TODO: Do more stuffs here!!!
+    //     switch (propKey) {
+    //       /** NOTE: no op for other prop keys */
+    //       default: {
+    //         return;
+    //       }
+    //     }
+    //   });
+    switch (true) {
+      default: {
+        return Promise.resolve(this.renderComplete);
+      }
+    }
 
-    return true;
+    return;
   }
 
   render({
