@@ -38,31 +38,46 @@ class HelloWorld extends LitElement {
   //   // console.log('🚧 _propertiesChanged', props, changed, oldProps);
   // }
 
-  // didRender() {
-  //   console.log('🚧 didRender', this);
-  // }
-
   _shouldPropertiesChange(props, changedProps) {
     console.log('🚧 _shouldPropertiesChange', props, changedProps);
+
+    if (changedProps == null) {
+      return true;
+    }
 
     const {
       firstName,
       lastName,
     } = changedProps;
 
-    // Do more stuffs with firstName, lastName.
+    if ('firstName' in changedProps) {
+      // Do something with 'firstName'
+    }
+
+    if ('lastName' in changedProps) {
+      // Do something with lastName
+    }
 
     return true;
   }
 
   didRender(props, changedProps) {
+    if (changedProps == null) {
+      return;
+    }
+
     const {
       firstName,
       lastName,
     } = changedProps;
 
-    // Do more stuffs with firstName, lastName.
+    if ('firstName' in changedProps) {
+      // Do something with 'firstName'
+    }
 
+    if ('lastName' in changedProps) {
+      // Do something with 'lastName'
+    }
   }
 
   render({
