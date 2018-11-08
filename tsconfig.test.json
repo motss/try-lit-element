@@ -27,8 +27,6 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-    "jsx": "react",
-    "jsxFactory": "h",
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,

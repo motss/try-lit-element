@@ -3,6 +3,7 @@
     "@messageflow/tslint-config"
   ],
   "rules": {
+    "no-console": true,
     "no-debugger": true
   }
 }
