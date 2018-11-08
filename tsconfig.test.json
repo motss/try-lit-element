@@ -16,6 +16,8 @@
     "traceResolution": false,
 
     "lib": [
+      "dom",
+      "dom.iterable",
       "esnext",
       "esnext.array",
       "esnext.asynciterable",
@@ -23,7 +25,7 @@
       "esnext.symbol"
     ],
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "jsx": "react",
     "jsxFactory": "h",
@@ -35,7 +37,6 @@
   "include": ["src/**/*"],
   "exclude": [
     "node_modules",
-    "src/test*/**/*",
     "src/demo*/**/*"
   ]
 }

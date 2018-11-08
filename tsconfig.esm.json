@@ -23,14 +23,14 @@
       "esnext.symbol"
     ],
     "moduleResolution": "node",
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "jsx": "react",
     "jsxFactory": "h",
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist"
+    "declarationDir": "dist",
   },
   "include": ["src/**/*"],
   "exclude": [

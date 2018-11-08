@@ -1,45 +1,50 @@
 <div align="center" style="text-align: center;">
   <h1 style="border-bottom: none;">try-lit-element</h1>
 
-  <p>Better greeting message</p>
+  <p>Developing with latest LitElement</p>
 </div>
 
 <hr />
 
-[![NPM][nodei-badge]][nodei-url]
+[![Version][version-badge]][version-url]
+[![Node version][node-version-badge]][node-version-url]
+[![MIT License][mit-license-badge]][mit-license-url]
+
+[![Downloads][downloads-badge]][downloads-url]
+[![Total downloads][total-downloads-badge]][downloads-url]
+[![Packagephobia][packagephobia-badge]][packagephobia-url]
+[![Bundlephobia][bundlephobia-badge]][bundlephobia-url]
 
 [![Build Status][travis-badge]][travis-url]
-[![Version][version-badge]][version-url]
-[![Downloads][downloads-badge]][downloads-url]
-[![MIT License][mit-license-badge]][mit-license-url]
+[![CircleCI][circleci-badge]][circleci-url]
 [![Dependency Status][daviddm-badge]][daviddm-url]
-[![NSP Status][nsp-badge]][nsp-url]
+[![codecov][codecov-badge]][codecov-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
 
+[![codebeat badge][codebeat-badge]][codebeat-url]
+[![Codacy Badge][codacy-badge]][codacy-url]
 [![Code of Conduct][coc-badge]][coc-url]
 
-[![codebeat-badge]][codebeat-url]
-[![codacy-badge]][codacy-url]
-[![inch-badge]][inch-url]
-
-> Try lit-element
+> Better greeting message
 
 ## Table of contents
 
-- [Pre-requisite](#pre-requisite)
+- [Table of contents](#table-of-contents)
+- [Pre-requisites](#pre-requisites)
 - [Setup](#setup)
   - [Install](#install)
   - [Usage](#usage)
     - [Node.js](#nodejs)
     - [Native ES modules or TypeScript](#native-es-modules-or-typescript)
 - [API Reference](#api-reference)
-  - [greeting(name)](#greetingname)
-  - [greetingSync(name)](#greetingsyncname)
+  - [greeting([name])](#greetingname)
+  - [greetingSync([name])](#greetingsyncname)
 - [License](#license)
 
 ## Pre-requisites
 
-- [Node.js][node-js-url] >= 8.9.0
-- [NPM][npm-url] >= 5.5.1 ([NPM][npm-url] comes with [Node.js][node-js-url] so there is no need to install separately.)
+- [Node.js][nodejs-url] >= 10.11.0
+- [NPM][npm-url] >= 6.4.1 ([NPM][npm-url] comes with [Node.js][nodejs-url] so there is no need to install separately.)
 
 ## Setup
 
@@ -68,26 +73,26 @@ import greeting from 'try-lit-element';
 
 ## API Reference
 
-### greeting(name)
+### greeting([name])
 
-  - name <[string][string-mdn-url]> Name of the person to greet at.
-  - returns: <[Promise][promise-mdn-url]&lt;[string][string-mdn-url]&gt;> Promise which resolves with a greeting message.
+- `name` <[string][string-mdn-url]> Name of the person to greet at.
+- returns: <[Promise][promise-mdn-url]<[string][string-mdn-url]>> Promise which resolves with a greeting message.
 
-### greetingSync(name)
+### greetingSync([name])
 
 This methods works the same as `greeting(name)` except that this is the synchronous version.
 
 ## License
 
-[MIT License](https://motss.mit-license.org/) © Rong Sen Ng
+[MIT License](https://motss.mit-license.org/) © Rong Sen Ng (motss)
 
-
-
+<!-- References -->
 [typescript-url]: https://github.com/Microsoft/TypeScript
-[node-js-url]: https://nodejs.org
+[nodejs-url]: https://nodejs.org
 [npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
 
+<!-- MDN -->
 [array-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [function-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
@@ -99,37 +104,41 @@ This methods works the same as `greeting(name)` except that this is the synchron
 [set-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 [string-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
+<!-- Badges -->
+[version-badge]: https://flat.badgen.net/npm/v/try-lit-element
+[node-version-badge]: https://flat.badgen.net/npm/node/try-lit-element
+[mit-license-badge]: https://flat.badgen.net/npm/license/try-lit-element
 
+[downloads-badge]: https://flat.badgen.net/npm/dm/try-lit-element
+[total-downloads-badge]: https://flat.badgen.net/npm/dt/try-lit-element?label=total%20downloads
+[packagephobia-badge]: https://flat.badgen.net/packagephobia/install/try-lit-element
+[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/try-lit-element
 
-[nodei-badge]: https://nodei.co/npm/try-lit-element.png?downloads=true&downloadRank=true&stars=true
+[travis-badge]: https://flat.badgen.net/travis/motss/try-lit-element
+[circleci-badge]: https://flat.badgen.net/circleci/github/motss/try-lit-element
+[daviddm-badge]: https://flat.badgen.net/david/dep/motss/try-lit-element
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/try-lit-element?label=codecov
+[coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/try-lit-element?label=coveralls
 
-[travis-badge]: https://img.shields.io/travis/motss/try-lit-element.svg?style=flat-square
+[codebeat-badge]: https://codebeat.co/badges/123
+[codacy-badge]: https://api.codacy.com/project/badge/Grade/123
+[coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
-[version-badge]: https://img.shields.io/npm/v/try-lit-element.svg?style=flat-square
-[downloads-badge]: https://img.shields.io/npm/dm/try-lit-element.svg?style=flat-square
-[mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
-[nsp-badge]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae/badge?style=flat-square
-[daviddm-badge]: https://img.shields.io/david/motss/try-lit-element.svg?style=flat-square
+<!-- Links -->
+[version-url]: https://www.npmjs.com/package/try-lit-element
+[node-version-url]: https://nodejs.org/en/download
+[mit-license-url]: https://github.com/motss/try-lit-element/blob/master/LICENSE
 
-[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-
-[codebeat-badge]: https://codebeat.co/badges/e486e791-12b7-4198-b834-0fa5bd04e1c3?style=flat-square
-[codacy-badge]: https://api.codacy.com/project/badge/Grade/a70d1556b4e74711a162c4fd4dbb68a1?style=flat-square
-[inch-badge]: http://inch-ci.org/github/motss/try-lit-element.svg?branch=master&style=flat-square
-
-
-
-[nodei-url]: https://nodei.co/npm/try-lit-element
+[downloads-url]: http://www.npmtrends.com/try-lit-element
+[packagephobia-url]: https://packagephobia.now.sh/result?p=try-lit-element
+[bundlephobia-url]: https://bundlephobia.com/result?p=try-lit-element
 
 [travis-url]: https://travis-ci.org/motss/try-lit-element
-[version-url]: https://npmjs.org/package/try-lit-element
-[downloads-url]: http://www.npmtrends.com/try-lit-element
-[mit-license-url]: https://github.com/motss/try-lit-element/blob/master/LICENSE
-[nsp-url]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae
+[circleci-url]: https://circleci.com/gh/motss/try-lit-element/tree/master
 [daviddm-url]: https://david-dm.org/motss/try-lit-element
-
-[coc-url]: https://github.com/motss/try-lit-element/blob/master/CODE_OF_CONDUCT.md
+[codecov-url]: https://codecov.io/gh/motss/try-lit-element
+[coveralls-url]: https://coveralls.io/github/motss/try-lit-element?branch=master
 
 [codebeat-url]: https://codebeat.co/projects/github-com-motss-try-lit-element-master
 [codacy-url]: https://www.codacy.com/app/motss/try-lit-element?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/try-lit-element&amp;utm_campaign=Badge_Grade
-[inch-url]: http://inch-ci.org/github/motss/try-lit-element
+[coc-url]: https://github.com/motss/try-lit-element/blob/master/CODE_OF_CONDUCT.md
