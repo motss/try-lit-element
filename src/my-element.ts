@@ -5,9 +5,6 @@ import {
   property,
 } from '@polymer/lit-element';
 
-console.log('haha');
-debugger;
-
 @customElement('my-element' as any)
 export class MyElement extends LitElement {
   @property({ type: String })

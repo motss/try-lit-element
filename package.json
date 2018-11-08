@@ -44,6 +44,7 @@
     "cross-env": "^5.2.0",
     "rollup": "^0.67.0",
     "rollup-plugin-filesize": "^5.0.1",
+    "rollup-plugin-minify-html-literals": "^1.1.1",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-terser": "^3.0.0",
     "rollup-plugin-tslint": "^0.1.35",
