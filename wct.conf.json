@@ -1,9 +1,6 @@
 {
-  "verbose": true,
-  "color": true,
-  "npm": true,
   "moduleResolution": "node",
-  "suites": [ "src/test" ],
+  "npm": true,
   "plugins": {
     "local": {
       "browsers": [
@@ -20,5 +17,7 @@
         ]
       }
     }
-  }
+  },
+  "suites": [ "src/test" ],
+  "verbose": true
 }
